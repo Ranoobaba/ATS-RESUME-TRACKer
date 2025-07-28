@@ -15,12 +15,14 @@ A powerful AI-powered resume analysis tool that helps job seekers optimize their
 - **😄 Fun Features**: Humorous insults and memes for low scores
 - **🔐 Google OAuth**: Secure login with Google accounts
 - **📱 Responsive Design**: Works on desktop and mobile devices
+- **🌐 Modern Frontend**: Next.js frontend with beautiful UI
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
 - Python 3.9+
+- Node.js 18+ (for frontend)
 - Google Chrome (for PDF processing)
 - OpenAI API key
 - Google OAuth credentials
@@ -33,12 +35,19 @@ A powerful AI-powered resume analysis tool that helps job seekers optimize their
    cd ATS-RESUME-TRACKer
    ```
 
-2. **Install dependencies**:
+2. **Install backend dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Set up environment variables**:
+3. **Install frontend dependencies**:
+   ```bash
+   cd frontend
+   npm install
+   cd ..
+   ```
+
+4. **Set up environment variables**:
    Create a `.env` file in the root directory:
    ```
    OPENAI_API_KEY=your_openai_api_key_here
@@ -46,13 +55,20 @@ A powerful AI-powered resume analysis tool that helps job seekers optimize their
    GOOGLE_CLIENT_SECRET=your_google_client_secret_here
    ```
 
-4. **Run the application**:
+5. **Run the backend (Streamlit)**:
    ```bash
    streamlit run app.py
    ```
 
-5. **Open your browser**:
-   Navigate to `http://localhost:8503`
+6. **Run the frontend (Next.js)**:
+   ```bash
+   cd frontend
+   npm run dev
+   ```
+
+7. **Open your browser**:
+   - Backend: `http://localhost:8503`
+   - Frontend: `http://localhost:3000`
 
 ## 🔧 Setup Instructions
 
@@ -71,15 +87,16 @@ A powerful AI-powered resume analysis tool that helps job seekers optimize their
 
 ## 📖 How to Use
 
+### Streamlit Backend (Full Features)
 1. **Login**: Use your Google account to authenticate
 2. **Enter Job Description**: Paste the job description you're applying for
 3. **Upload Resume**: Upload your resume in PDF format
-4. **Choose Analysis**: Select from multiple analysis options:
-   - **Resume Analysis**: Get detailed feedback on your resume
-   - **Keywords Missing**: Identify missing keywords from job description
-   - **Percentage Match**: See your match score with visual indicator
-   - **Interview Likelihood**: Find out if you'd get an interview
-   - **Skills Improvement**: Get suggestions to improve your skills
+4. **Choose Analysis**: Select from multiple analysis options
+
+### Next.js Frontend (Modern UI)
+1. **Enter Job Description**: Use the beautiful text area
+2. **Upload Resume**: Drag and drop or click to browse
+3. **Click Analysis Buttons**: Get instant feedback
 
 ## 🎨 Features in Detail
 
@@ -100,24 +117,44 @@ A powerful AI-powered resume analysis tool that helps job seekers optimize their
 
 ## 🛠️ Technical Stack
 
-- **Frontend**: Streamlit
+### Backend
+- **Framework**: Streamlit
 - **AI**: OpenAI GPT-4o
 - **Authentication**: Google OAuth 2.0
 - **Charts**: Plotly
 - **PDF Processing**: pdf2image, PIL
-- **Styling**: Custom CSS with emojis and modern design
+
+### Frontend
+- **Framework**: Next.js 14
+- **Styling**: Tailwind CSS
+- **Language**: TypeScript
+- **UI Components**: Custom components with modern design
 
 ## 📁 Project Structure
 
 ```
 ATS-RESUME-TRACKer/
-├── app.py              # Main application file
+├── app.py              # Main Streamlit application
 ├── requirements.txt    # Python dependencies
 ├── .env               # Environment variables (create this)
 ├── .gitignore         # Git ignore rules
 ├── README.md          # This file
+├── frontend/          # Next.js frontend
+│   ├── src/
+│   ├── package.json
+│   └── ...
 └── venv/              # Virtual environment (auto-created)
 ```
+
+## 🚀 Deployment
+
+### Backend (Streamlit)
+- Deploy to Streamlit Cloud
+- Or use Heroku, Railway, or any Python hosting
+
+### Frontend (Next.js)
+- Deploy to Vercel (recommended)
+- Or use Netlify, Railway, or any static hosting
 
 ## 🤝 Contributing
 
@@ -135,6 +172,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - OpenAI for providing the GPT-4o API
 - Streamlit for the amazing web framework
+- Next.js for the modern frontend framework
 - Google for OAuth authentication
 - The open-source community for various libraries used
 
