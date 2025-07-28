@@ -1,0 +1,10 @@
+streamlit
+openai
+python-dotenv
+pdf2image
+Pillow
+requests
+beautifulsoup4
+google-auth
+google-auth-oauthlib
+google-auth-httplib2 
